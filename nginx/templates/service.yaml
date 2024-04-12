@@ -4,6 +4,7 @@ metadata:
   name: {{ include "nginx.fullname" . }}
   labels:
     {{- include "nginx.labels" . | nindent 4 }}
+  namespace: dev
 spec:
   type: {{ .Values.service.type }}
   ports:
