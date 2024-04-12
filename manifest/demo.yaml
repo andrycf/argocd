@@ -25,7 +25,7 @@ metadata:
   name: app
   namespace: dev
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: app
