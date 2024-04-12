@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: "https://github.com/andrycf/argocd.git"
     targetRevision: main
-    path: manifest
+    path: nginx
   destination:
     server: "https://kubernetes.default.svc"
   syncPolicy:
