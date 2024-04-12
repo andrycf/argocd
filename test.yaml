@@ -5,7 +5,6 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: acf=andrycf/nginx:~v0.1
-    argocd-image-updater.argoproj.io/acf.force-update: "true"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
