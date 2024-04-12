@@ -15,6 +15,7 @@ apiVersion: extensions/v1beta1
 {{- end }}
 kind: Ingress
 metadata:
+  namespace: dev
   name: {{ $fullName }}
   labels:
     {{- include "nginx.labels" . | nindent 4 }}
