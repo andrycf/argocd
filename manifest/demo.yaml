@@ -13,7 +13,7 @@ spec:
     app: app
   ports:
   - port: 8080
-    targetPort: 8080
+    targetPort: 80
     protocol: TCP
     name: http
 ---
@@ -35,7 +35,7 @@ spec:
         app: app
     spec:
       containers:
-      - image: andrycf/demo-knative
+      - image: andrycf/nginx:v0.1.0
         imagePullPolicy: IfNotPresent
         name: sb-knative
         resources: 
