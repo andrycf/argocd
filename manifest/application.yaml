@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sb-native
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: andrycf/demo-knative:~v0.1
+    argocd-image-updater.argoproj.io/write-back-method: git
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/andrycf/argocd.git"
+    targetRevision: main
+    #path: manifest
+    chart: my-app-chart
+    helm:
+      version: v3
+      releaseName: my-app
+      passCredentials: false
+      parameters:
+        - name: "replicaCount"
+          value: "2"
+        - name: "image.repository"
+          value: aputra/nginx-lesson159
+        - name: "image.tag"
+          value: v0.1.0
+  destination:
+    namespace: dev
+    server: "https://kubernetes.default.svc"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
+    syncOptions:
+      - Validate=true
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
