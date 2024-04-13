@@ -1,0 +1,8 @@
+helm:
+  parameters:
+  - name: image.name
+    value: andrycf/nginx
+    forcestring: true
+  - name: image.tag
+    value: v0.1.3
+    forcestring: true
