@@ -4,5 +4,5 @@ helm:
     value: andrycf/nginx
     forcestring: true
   - name: image.tag
-    value: v0.1.4
+    value: v0.1.5
     forcestring: true
