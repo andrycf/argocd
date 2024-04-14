@@ -1,3 +1,5 @@
+#kubectl edit cm/argocd-cm -n argocd
+#kubectl -n argocd rollout restart deploy argocd-repo-server
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
