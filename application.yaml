@@ -1,3 +1,4 @@
+#kubectl edit secret/argocd-initial-admin-secret -n argocd
 #kubectl port-forward service/argocd-server -n argocd 8080:80
 #kubectl edit cm/argocd-cm -n argocd
 #kubectl -n argocd rollout restart deploy argocd-repo-server
